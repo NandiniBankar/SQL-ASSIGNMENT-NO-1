@@ -161,91 +161,109 @@ order by 2 desc
 =======================================================================================================================================================================
 
 1.Total Number of Employees.
+
 select count(*) from EMP;
 
 --------------------------------------------------------------------------------------------------------------------
 
 2.Total Number of Departments.
+
 select count(*) from DEPT;
 
 --------------------------------------------------------------------------------------------------------------------
 
 3.All the Employees.
+
 select * from EMP;
 
 --------------------------------------------------------------------------------------------------------------------
 
 4.All the Departments.
+
 select * from DEPT;
 
 --------------------------------------------------------------------------------------------------------------------
 
 5.Total salary paid for all employees.
+
 select * from DEPT;
 
 --------------------------------------------------------------------------------------------------------------------
 
 6.Total commission paid to all employees.
+
 select sum(COMM) from EMP;
 
 --------------------------------------------------------------------------------------------------------------------
 
 7.Which job titles of the employees get commission paid.
+
 select JOB from EMP where COMM>0;
 
 --------------------------------------------------------------------------------------------------------------------
 
 8. System date.
+   
 select SYSDATE from dual;
 
 --------------------------------------------------------------------------------------------------------------------
 
 9. Average salary paid to all employees.
+    
 select avg(SAL) as average_salary from EMP;
 
 --------------------------------------------------------------------------------------------------------------------
 
 10. How many employees are there in each departments.
+    
 select  DEPTNO, count(*) as employee_count from EMP group by DEPTNO;
 
 --------------------------------------------------------------------------------------------------------------------
 
 11. Total salary of the employees in each department.
+    
 select DEPTNO, sum(SAL) as TOTAL_DEPT_SALARY from EMP group by DEPTNO;
 
 --------------------------------------------------------------------------------------------------------------------
 
 12. How many employees are there in each departments?
+    
 select DEPTNO,count(EMPNO) as TOTAL_EMP from EMP group by DEPTNO;
 
 --------------------------------------------------------------------------------------------------------------------
 
 13. Average salary paid for each job title.
+    
 select JOB, AVG(SAL) AS average_salary from EMP group by JOB;
 
 --------------------------------------------------------------------------------------------------------------------
 
 14. Hire day,month and year for each employee.
+    
 select  ENAME,to_char(HIREDATE,'day') as HIRE_DAY,to_char(HIREDATE,'month') AS HIRE_MONTH, to_char(HIREDATE,'yyyy') as HIRE_YEAR from EMP ;
 
 --------------------------------------------------------------------------------------------------------------------
 
 15.Sort the Employees department wise
+
 select * from EMP order by DEPTNO;
 
 --------------------------------------------------------------------------------------------------------------------
 
 16. Sort the employees based on their job title.
+    
 select * from EMP order by JOB;
 
 --------------------------------------------------------------------------------------------------------------------
 
 17. Sort the employee based on descending order of their salaries;
+    
 select * from EMP order by SAL DESC;
 
 --------------------------------------------------------------------------------------------------------------------
 
 18. Sort the employee ascending order of their department and descending order of their salary.
+    
 select * from EMP order by  DEPTNO asc , SAL desc;
 
 --------------------------------------------------------------------------------------------------------------------
